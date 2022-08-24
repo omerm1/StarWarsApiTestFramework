@@ -1,4 +1,4 @@
-package com.sparta.om.dto.peopledto;
+package com.sparta.om.framework.peopledto;
 
 import java.util.List;
 import com.fasterxml.jackson.annotation.JsonProperty;

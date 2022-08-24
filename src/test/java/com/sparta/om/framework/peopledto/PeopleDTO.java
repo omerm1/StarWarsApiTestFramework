@@ -2,6 +2,7 @@ package com.sparta.om.framework.peopledto;
 
 import java.util.List;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.sparta.om.framework.connection.ConnectionManager;
 
 public class PeopleDTO{
 
@@ -42,5 +43,45 @@ public class PeopleDTO{
 			",count = '" + count + '\'' + 
 			",results = '" + results + '\'' + 
 			"}";
-		}
+	}
+
+	public boolean isCountAPositiveNumber() {
+		return getCount() > 0;
+	}
+
+	public boolean isCountAnInt() {
+		return getCount()instanceof Integer;
+	}
+
+	public boolean isCountNotNull() {
+		return getCount() != null;
+	}
+
+	public boolean isCountNotEmpty() {
+		return getCount() != 0;
+	}
+
+	public boolean isNextNotEmpty() {
+		return !getNext().equals("");
+	}
+
+	public boolean isNextNotNull() {
+		return getNext() != null;
+	} //check
+
+	public boolean DoesNextReturnUrl() {
+		return getNext().toString().matches("https?:\\/\\/(www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b([-a-zA-Z0-9()@:%_\\+.~#?&//=]*)");
+	}
+
+	public boolean isPreviousNotEmpty() {
+		return !getPrevious().equals("");
+	}
+
+	public boolean isPreviousNotNull() {
+		return getPrevious() != null;
+	}
+
+	public boolean DoesPreviousReturnUrl() {
+		return getPrevious().toString().matches("https?:\\/\\/(www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b([-a-zA-Z0-9()@:%_\\+.~#?&//=]*)");
+	}
 }

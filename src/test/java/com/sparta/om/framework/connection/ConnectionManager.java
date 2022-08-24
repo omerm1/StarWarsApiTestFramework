@@ -1,4 +1,4 @@
-package com.sparta.om.connection;
+package com.sparta.om.framework.connection;
 
 import java.io.IOException;
 import java.net.URI;

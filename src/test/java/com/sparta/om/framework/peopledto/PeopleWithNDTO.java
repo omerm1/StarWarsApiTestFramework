@@ -1,9 +1,9 @@
-package com.sparta.om.dto.peopledto;
+package com.sparta.om.framework.peopledto;
 
 import java.util.List;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class ResultsItem{
+public class PeopleWithNDTO {
 
 	@JsonProperty("films")
 	private List<String> films;
@@ -120,7 +120,7 @@ public class ResultsItem{
 	@Override
  	public String toString(){
 		return 
-			"ResultsItem{" + 
+			"PeopleWithN{" + 
 			"films = '" + films + '\'' + 
 			",homeworld = '" + homeworld + '\'' + 
 			",gender = '" + gender + '\'' + 

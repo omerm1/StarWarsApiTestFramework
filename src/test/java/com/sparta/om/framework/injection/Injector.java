@@ -1,8 +1,8 @@
-package com.sparta.om.injection;
+package com.sparta.om.framework.injection;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.sparta.om.dto.peopledto.PeopleDTO;
-import com.sparta.om.dto.peopledto.PeopleWithNDTO;
+import com.sparta.om.framework.peopledto.PeopleDTO;
+import com.sparta.om.framework.peopledto.PeopleWithNDTO;
 
 import java.io.IOException;
 import java.net.URL;

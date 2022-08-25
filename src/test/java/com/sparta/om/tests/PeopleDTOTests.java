@@ -3,10 +3,7 @@ package com.sparta.om.tests;
 import com.sparta.om.framework.connection.ConnectionManager;
 import com.sparta.om.framework.injection.Injector;
 import com.sparta.om.framework.peopledto.PeopleDTO;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Nested;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -27,7 +24,7 @@ public class PeopleDTOTests {
         @Test
         @DisplayName("Is count a positive number")
         void isCountAPositiveNumber(){
-            System.out.println(ConnectionManager.getConnection("people", ""));
+            System.out.println(ConnectionManager.getConnection());
             System.out.println(dto);
             assertTrue(dto.isCountAPositiveNumber());
         }

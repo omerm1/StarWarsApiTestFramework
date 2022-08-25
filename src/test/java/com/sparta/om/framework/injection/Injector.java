@@ -1,8 +1,8 @@
 package com.sparta.om.framework.injection;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.sparta.om.framework.peopledto.PeopleDTO;
-import com.sparta.om.framework.peopledto.PeopleWithNDTO;
+import com.sparta.om.framework.DTO.BaseDTO;
+import com.sparta.om.framework.DTO.PeopleDTO;
 
 import java.io.IOException;
 import java.net.URL;
@@ -10,11 +10,11 @@ import java.net.URL;
 public class Injector {
     private static final ObjectMapper mapper = new ObjectMapper();
 
-    public static PeopleDTO injectPeopleDTO(String path) {
-        PeopleDTO dto = new PeopleDTO();
+    public static BaseDTO injectPeopleDTO(String path) {
+        BaseDTO dto = new BaseDTO();
 
         try {
-            dto = mapper.readValue(new URL(path), PeopleDTO.class);
+            dto = mapper.readValue(new URL(path), BaseDTO.class);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -22,11 +22,22 @@ public class Injector {
     }
 
 
-    public static PeopleWithNDTO injectPeopleWithNDTO(String path) {
-        PeopleWithNDTO dto = new  PeopleWithNDTO();
+    public static PeopleDTO injectPeopleWithNDTO(String path) {
+        PeopleDTO dto = new PeopleDTO();
 
         try {
-            dto = mapper.readValue(new URL(path),  PeopleWithNDTO.class);
+            dto = mapper.readValue(new URL(path),  PeopleDTO.class);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return dto;
+    }
+
+    public static BaseDTO injectBaseDTO(String path) {
+        BaseDTO dto = new BaseDTO();
+
+        try {
+            dto = mapper.readValue(new URL(path), BaseDTO.class);
         } catch (IOException e) {
             e.printStackTrace();
         }

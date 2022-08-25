@@ -21,7 +21,8 @@ public class Injector {
         return dto;
     }
 
-    public static PeopleWithNDTO injectPeopleWithNDTO(String path, int endpoint) {
+
+    public static PeopleWithNDTO injectPeopleWithNDTO(String path) {
         PeopleWithNDTO dto = new  PeopleWithNDTO();
 
         try {

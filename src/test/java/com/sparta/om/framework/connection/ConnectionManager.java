@@ -15,11 +15,11 @@ public class ConnectionManager {
     } //For the base URL
 
     public static String getConnection(String key, String value) {
-        return BASEURL + key + "/" + value;
+        return BASEURL + key + "/" + value + "?format=json";
     } //For resource with pagination
 
     public static String getConnection(String key, int value) {
-        return BASEURL + key + "/" + value;
+        return BASEURL + key + "/" + value + "?format=json";
     } //For resource with N (endpoint)
 
     private static HttpResponse<String> getResponse() {

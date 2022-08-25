@@ -1,6 +1,8 @@
 package com.sparta.om.framework.peopledto;
 
 import java.util.List;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.sparta.om.framework.connection.ConnectionManager;
 

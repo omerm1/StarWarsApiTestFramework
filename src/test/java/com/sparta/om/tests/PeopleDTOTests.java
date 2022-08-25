@@ -13,7 +13,7 @@ public class PeopleDTOTests {
 
     @BeforeAll
     static void init() {
-        dto = Injector.injectPeopleDTO(ConnectionManager.getConnection("people", ""));
+        dto = Injector.injectPeopleDTO(ConnectionManager.getConnection("people"));
         statusCode = ConnectionManager.getStatusCode();
 
     }

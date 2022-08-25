@@ -289,9 +289,4 @@ public class PeopleDTO {
 	}
 
 
-
-
-
-
-
 }

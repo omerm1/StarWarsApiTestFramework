@@ -12,6 +12,8 @@ public class PeopleDTOTests {
     private static PeopleDTO dto;
     private static int statusCode;
 
+    private static int page = 0;
+
     @BeforeAll
     static void init() {
         dto = Injector.injectPeopleDTO(ConnectionManager.getConnection("people", ""));
@@ -66,12 +68,14 @@ public class PeopleDTOTests {
         }
 
         @Test
+        @DisabledIf("onLastPage")
         @DisplayName("Does next return Url")
         void doesNextReturnUrl(){
             assertTrue(dto.DoesNextReturnUrl());
         }
 
         @Test
+        @DisabledIf("onFirstPage")
         @DisplayName("Is previous not empty")
         void isPreviousNotEmpty(){
             assertTrue(dto.isPreviousNotEmpty());
@@ -92,8 +96,11 @@ public class PeopleDTOTests {
         }
 
         private boolean onFirstPage() {
-            System.out.println(dto);
-            return true;
+            return page == 0;
+        }
+
+        private boolean onLastPage() {
+            return page == 9;
         }
     }
 }

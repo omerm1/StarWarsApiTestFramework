@@ -1,12 +1,10 @@
-package com.sparta.om.framework.peopledto;
+package com.sparta.om.framework.DTO;
 
 import java.util.List;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.sparta.om.framework.connection.ConnectionManager;
 
-public class PeopleDTO{
+public class BaseDTO {
 
 	@JsonProperty("next")
 	private String next;

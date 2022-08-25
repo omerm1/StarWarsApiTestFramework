@@ -1,11 +1,9 @@
 package com.sparta.om.tests;
 
-import com.sparta.om.framework.connection.ConnectionManager;
-import com.sparta.om.framework.injection.Injector;
-import com.sparta.om.framework.peopledto.PeopleWithNDTO;
+import com.sparta.om.framework.DTO.PeopleDTO;
 
 public class PeopleWithNDTOTests {
-    private static PeopleWithNDTO dto;
+    private static PeopleDTO dto;
     private static int statusCode;
 
 

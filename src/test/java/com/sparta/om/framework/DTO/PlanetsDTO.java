@@ -1,9 +1,9 @@
-package com.sparta.om.framework.planetsdto;
+package com.sparta.om.framework.DTO;
 
 import java.util.List;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class PlanetsWithNDTO{
+public class PlanetsDTO {
 
 	@JsonProperty("films")
 	private List<String> films;

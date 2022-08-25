@@ -1,14 +1,17 @@
 package com.sparta.om.tests;
 
+import com.sparta.om.framework.DTO.BaseDTO;
 import com.sparta.om.framework.connection.ConnectionManager;
 import com.sparta.om.framework.injection.Injector;
-import com.sparta.om.framework.DTO.BaseDTO;
-import org.junit.jupiter.api.*;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Nested;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.condition.DisabledIf;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-public class PeopleDTOTests {
+public class BaseDTOTest {
     private static BaseDTO dto;
     private static int statusCode;
 
@@ -16,7 +19,7 @@ public class PeopleDTOTests {
 
     @BeforeAll
     static void init() {
-        dto = Injector.injectPeopleDTO(ConnectionManager.getConnection("people"));
+        dto = Injector.injectPeopleDTO(ConnectionManager.getConnection("starships"));
         statusCode = ConnectionManager.getStatusCode();
 
     }
@@ -103,4 +106,5 @@ public class PeopleDTOTests {
             return page == 9;
         }
     }
+
 }

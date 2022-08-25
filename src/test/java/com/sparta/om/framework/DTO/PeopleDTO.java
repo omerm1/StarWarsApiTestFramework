@@ -1,10 +1,10 @@
-package com.sparta.om.framework.peopledto;
+package com.sparta.om.framework.DTO;
 
 import java.util.ArrayList;
 import java.util.List;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class PeopleWithNDTO{
+public class PeopleDTO {
 
 	@JsonProperty("films")
 	private List<String> films;

@@ -5,9 +5,4 @@ import java.util.Locale;
 
 public class Util {
 
-    public static LocalDate BeforeBattleofYavinConverter(String BBYdate){
-        LocalDate date = null;
-
-        return date;
-    }
 }

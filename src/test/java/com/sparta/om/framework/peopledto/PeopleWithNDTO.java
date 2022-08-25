@@ -1,5 +1,6 @@
 package com.sparta.om.framework.peopledto;
 
+import java.util.ArrayList;
 import java.util.List;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -136,7 +137,156 @@ public class PeopleWithNDTO{
 			",species = '" + species + '\'' + 
 			",starships = '" + starships + '\'' + 
 			",name = '" + name + '\'' + 
-			",height = '" + height + '\'' + 
-			"}";
-		}
+			",height = '" + height + '\'' +
+					"}";
+	}
+
+	public boolean NameReturnsAString(){
+		return getName() instanceof String;
+	}
+
+	public boolean NameIsNotNull(){
+		return getName() != null;
+	}
+
+	public boolean NameIsNotEmpty(){
+		return !getName().isEmpty();
+	}
+
+	//The string can be returned as unknown
+	public boolean HeightReturnsInteger(){
+		return Integer.valueOf(getHeight()) instanceof Integer;
+	}
+
+	public boolean HeightIsNotNull(){
+		return getHeight() != null;
+	}
+
+	public boolean HeightIsNotEmpty(){
+		return !getHeight().isEmpty();
+	}
+
+	public boolean MassReturnsInteger(){
+		return Integer.valueOf(getMass()) instanceof  Integer;
+	}
+
+	public boolean MassIsNotNull(){
+		return getMass() != null;
+	}
+
+	public boolean MassIsNotEmpty(){
+		return !getMass().isEmpty();
+	}
+
+	public boolean HairColourReturnsAString(){
+		return getHairColor() instanceof String;
+	}
+
+	public boolean HairColourIsNotNull() {
+		return getHairColor() != null;
+	}
+
+	public boolean HairColourIsNotEmpty() {
+		return !getHairColor().isEmpty();
+	}
+
+	public boolean SkinColourReturnsAString(){
+		return getSkinColor() instanceof String;
+	}
+
+	public boolean SkinColourIsNotNull(){
+		return getSkinColor() != null;
+	}
+
+	public boolean SkinColourIsNotEmpty(){
+		return getSkinColor().isEmpty();
+	}
+
+	public boolean EyeColourReturnsAString(){
+		return getEyeColor() instanceof String;
+	}
+
+	public boolean EyeColourIsNotNull(){
+		return getEyeColor() != null;
+	}
+
+	public boolean EyeColourIsNotEmpty(){
+		return !getEyeColor().isEmpty();
+	}
+
+	//will need altering utilise the util method
+//	public boolean BirthYearReturnsDate(){
+//		return getBirthYear();
+//	}
+
+	public boolean BirthYearIsNotNull(){
+		return getBirthYear() != null;
+	}
+
+	public boolean BirthYearIsNotEmpty(){
+		return !getBirthYear().isEmpty();
+	}
+
+	public boolean GenderIsValid(){
+		return getGender().equals("Male")
+				|| getGender().equals("Female")
+				|| getGender().equals("none")
+				|| getGender().equals("n/a");
+	}
+
+	public boolean GenderIsNotNull(){
+		return getGender() != null;
+	}
+
+	public boolean GenderIsNotEmpty(){
+		return !getGender().isEmpty();
+	}
+
+	public boolean HomeWorldIsAString(){
+		return getHomeworld()instanceof String;
+	}
+
+	public boolean HomeWorldReturnsURL(){
+		return getHomeworld().matches("https?:\\/\\/(www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b([-a-zA-Z0-9()@:%_\\+.~#?&//=]*)");
+	}
+
+	public boolean HomeWorldIsNotEmpty(){
+		return !getHomeworld().isEmpty();
+	}
+
+	public boolean HomeWorldIsNotNull(){
+		return getHomeworld() != null;
+	}
+
+
+	public boolean FilmsReturnsAnArrayOfStrings(){
+		return getFilms() instanceof ArrayList<String>;
+	}
+
+	public boolean FilmsIsNotEmpty(){
+		return !getFilms().isEmpty();
+	}
+
+	public boolean FilmsIsNotNull(){
+		return getFilms() != null;
+	}
+
+	public boolean SpeciesReturnsAnObject(){
+		return getSpecies() instanceof Object;
+	}
+
+	public boolean SpeciesIsNotEmpty(){
+		return !getSpecies().isEmpty();
+	}
+
+	public boolean SpeciesIsNotNull(){
+		return getSpecies() != null;
+	}
+
+
+
+
+
+
+
 }

@@ -214,10 +214,15 @@ public class PeopleWithNDTO{
 		return !getEyeColor().isEmpty();
 	}
 
-	//will need altering utilise the util method
-//	public boolean BirthYearReturnsDate(){
-//		return getBirthYear();
-//	}
+
+	public boolean BirthYearIsValid(){
+		if (getBirthYear().contains("unknown")
+			|| getBirthYear().matches("[+-]?([0-9]*[.])?[0-9]+.{0,1}[B,Y,A]{3}")) {
+			return true;
+		}else{
+			return false;
+		}
+	}
 
 	public boolean BirthYearIsNotNull(){
 		return getBirthYear() != null;

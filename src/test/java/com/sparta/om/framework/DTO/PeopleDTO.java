@@ -285,9 +285,4 @@ public class PeopleDTO {
 	public boolean StarshipsIsNotNull(){
 		return getStarships() != null;
 	}
-
-
-
-
-
 }

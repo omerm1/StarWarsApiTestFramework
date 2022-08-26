@@ -13,19 +13,7 @@ import java.net.URL;
 public class Injector {
     private static final ObjectMapper mapper = new ObjectMapper();
 
-    public static BaseDTO injectPeopleDTO(String path) {
-        BaseDTO dto = new BaseDTO();
-
-        try {
-            dto = mapper.readValue(new URL(path), BaseDTO.class);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return dto;
-    }
-
-
-    public static PeopleDTO injectPeopleWithNDTO(String path) {
+    public static PeopleDTO injectPeopleDTO(String path) {
         PeopleDTO dto = new PeopleDTO();
 
         try {

@@ -14,12 +14,11 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 public class BaseDTOTest {
     private static BaseDTO dto;
     private static int statusCode;
-
-    private static int page = 0;
+    private static int page = 2;
 
     @BeforeAll
     static void init() {
-        dto = Injector.injectPeopleDTO(ConnectionManager.getConnection("starships"));
+        dto = Injector.injectBaseDTO(ConnectionManager.getConnection("starships", "page", page));
         statusCode = ConnectionManager.getStatusCode();
 
     }

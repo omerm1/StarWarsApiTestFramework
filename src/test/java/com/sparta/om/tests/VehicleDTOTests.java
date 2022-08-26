@@ -17,9 +17,4 @@ public class VehicleDTOTests {
         statusCode = ConnectionManager.getStatusCode();
     }
 
-    @BeforeEach
-    void init(){
-
-    }
-
 }

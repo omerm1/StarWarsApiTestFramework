@@ -1,6 +1,5 @@
 package com.sparta.om.tests;
 
-import com.sparta.om.framework.DTO.BaseDTO;
 import com.sparta.om.framework.DTO.PeopleDTO;
 import com.sparta.om.framework.connection.ConnectionManager;
 import com.sparta.om.framework.injection.Injector;
@@ -17,7 +16,7 @@ public class PeopleDTOTests {
 
     @BeforeAll
     static void init() {
-        peopleDTO = Injector.injectPeopleWithNDTO(ConnectionManager.getConnection());
+        peopleDTO = Injector.injectPeopleDTO(ConnectionManager.getConnection("people", 5));
         statusCode = ConnectionManager.getStatusCode();
     }
     @Nested
@@ -26,8 +25,6 @@ public class PeopleDTOTests {
         @Test
         @DisplayName("Name returns a string")
         void nameReturnsAString() {
-            System.out.println(ConnectionManager.getConnection());
-            System.out.println(peopleDTO);
             assertTrue(peopleDTO.NameReturnsAString());
         }
         @Test

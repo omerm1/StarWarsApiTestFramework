@@ -43,6 +43,23 @@ public class ConnectionManager {
         return response;
     }
 
+    private static HttpResponse<String> getResponse(String url) {
+        var client  = HttpClient.newHttpClient();
+        var request = HttpRequest
+                .newBuilder()
+                .uri(URI.create(url))
+                .build();
+
+        HttpResponse<String> response = null;
+
+        try {
+            response = client.send(request, HttpResponse.BodyHandlers.ofString());
+        } catch (IOException | InterruptedException e) {
+            e.printStackTrace();
+        }
+        return response;
+    }
+
     public static int getStatusCode() {
         return getResponse().statusCode();
     }
@@ -52,5 +69,9 @@ public class ConnectionManager {
                 .headers()
                 .firstValue(key)
                 .orElse("Key not found");
+    }
+
+    public static boolean UrlChecker(String url) {
+        return getResponse(url).statusCode() == 200;
     }
 }

@@ -1,5 +1,6 @@
 package com.sparta.om.framework.DTO;
 
+import java.time.LocalDate;
 import java.util.List;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -122,5 +123,140 @@ public class FilmsDTO{
 			",species = '" + species + '\'' + 
 			",producer = '" + producer + '\'' + 
 			"}";
-		}
+	}
+
+	public boolean editedIsNotNull() {
+		return getEdited() != null;
+	}
+
+	public boolean editedIsNotEmpty() {
+		return getEdited() != "";
+	}
+
+	public boolean editedIsInThePast() {
+		LocalDate date = LocalDate.parse(getEdited());
+		return LocalDate.now().isAfter(date);
+	}
+
+	public boolean directorIsNotNull() {
+		return getDirector() != null;
+	}
+
+	public boolean directorIsNotEmpty() {
+		return !getDirector().equals("");
+	}
+
+	public boolean titleIsNotNull() {
+		return getTitle() != null;
+	}
+
+	public boolean titleIsNotEmpty() {
+		return getTitle() != "";
+	}
+
+	public boolean createdIsInThePast() {
+		LocalDate date = LocalDate.parse(getCreated());
+		return LocalDate.now().isAfter(date);
+	}
+
+	public boolean createdIsNotNull() {
+		return getCreated() != null;
+	}
+
+	public boolean createdIsNotEmpty() {
+		return getCreated() != "";
+	}
+
+	public boolean vehiclesIsNotNull() {
+		return getVehicles() != null;
+	}
+
+	public boolean vehiclesIsNotEmpty() {
+		return !getVehicles().equals("");
+	}
+
+	public boolean openingCrawlIsNotEmpty() {
+		return !getOpeningCrawl().equals("");
+	}
+
+	public boolean openingCrawlIsNotNull() {
+		return getOpeningCrawl() != null;
+	}
+
+	public boolean urlIsNotEmpty() {
+		return !getUrl().equals("");
+	}
+
+	public boolean urlIsNotNull() {
+		return getUrl() != null;
+	}
+
+	public boolean UrlReturnsValidUrl() {
+		return getUrl().matches("https?:\\/\\/(www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b([-a-zA-Z0-9()@:%_\\+.~#?&//=]*)");
+	}
+
+	public boolean charactersIsNotEmpty() {
+		return !getCharacters().equals("");
+	}
+
+	public boolean charactersIsNotNull() {
+		return getCharacters() != null;
+	}
+
+	public boolean episodeIdIsNotEmpty() {
+		return !getEpisodeId().equals("");
+	}
+
+	public boolean isEpisodeIdAnInt() {
+		return getEpisodeId()instanceof Integer;
+	}
+
+	public boolean episodeIdIsNotNull() {
+		return getEpisodeId() != null;
+	}
+
+	public boolean planetsIsNotEmpty() {
+		return !getPlanets().equals("");
+	}
+
+	public boolean planetsIsNotNull() {
+		return getPlanets() != null;
+	}
+
+	public boolean releaseDateIsNotEmpty() {
+		return !getReleaseDate().equals("");
+	}
+
+	public boolean releaseDateIsNotNull() {
+		return getReleaseDate() != null;
+	}
+
+	public boolean releaseDateIsInThePast() {
+		LocalDate date = LocalDate.parse(getReleaseDate());
+		return LocalDate.now().isAfter(date);
+	}
+
+	public boolean starshipsIsNotEmpty() {
+		return !getStarships().equals("");
+	}
+
+	public boolean starshipsIsNotNull() {
+		return getStarships() != null;
+	}
+
+	public boolean speciesIsNotEmpty() {
+		return !getSpecies().equals("");
+	}
+
+	public boolean speciesIsNotNull() {
+		return getSpecies() != null;
+	}
+
+	public boolean producerIsNotEmpty() {
+		return !getProducer().equals("");
+	}
+
+	public boolean producerIsNotNull() {
+		return getProducer() != null;
+	}
 }

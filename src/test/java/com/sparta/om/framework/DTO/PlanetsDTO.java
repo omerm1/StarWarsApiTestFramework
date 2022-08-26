@@ -1,7 +1,10 @@
 package com.sparta.om.framework.DTO;
 
 import java.util.List;
+import java.util.stream.Stream;
+
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.sparta.om.framework.connection.ConnectionManager;
 
 public class PlanetsDTO {
 
@@ -122,5 +125,20 @@ public class PlanetsDTO {
 			",residents = '" + residents + '\'' + 
 			",terrain = '" + terrain + '\'' + 
 			"}";
+	}
+
+	public boolean residentsUrlChecker(){
+		int count = 0;
+		for (int i = 0; i < getResidents().size(); i++) {
+			if(ConnectionManager.UrlChecker(getResidents().get(i))){
+				count++;
+			}
 		}
+		return count == getResidents().size();
+	}
+
+
+
+
+
 }

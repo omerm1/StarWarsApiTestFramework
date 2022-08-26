@@ -290,9 +290,4 @@ public class PeopleDTO {
 
 
 
-
-
-
-
-
 }

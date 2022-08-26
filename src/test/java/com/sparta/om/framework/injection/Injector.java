@@ -3,6 +3,7 @@ package com.sparta.om.framework.injection;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.sparta.om.framework.DTO.BaseDTO;
 import com.sparta.om.framework.DTO.PeopleDTO;
+import com.sparta.om.framework.DTO.SpeciesDTO;
 import com.sparta.om.framework.DTO.PlanetsDTO;
 import com.sparta.om.framework.DTO.VehicleDTO;
 
@@ -46,6 +47,16 @@ public class Injector {
         return dto;
     }
 
+    public static SpeciesDTO injectSpeciesDTO(String path) {
+        SpeciesDTO dto = new SpeciesDTO();
+
+        try {
+            dto = mapper.readValue(new URL(path), SpeciesDTO.class);
+            } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return dto;
+    }
 
     public static PlanetsDTO injectPlanetsDTO(String path) {
         PlanetsDTO dto = new PlanetsDTO();

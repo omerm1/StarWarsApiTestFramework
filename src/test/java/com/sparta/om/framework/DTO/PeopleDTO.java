@@ -223,15 +223,12 @@ public class PeopleDTO {
 			return false;
 		}
 	}
-
 	public boolean BirthYearIsNotNull(){
 		return getBirthYear() != null;
 	}
-
 	public boolean BirthYearIsNotEmpty(){
 		return !getBirthYear().isEmpty();
 	}
-
 	public boolean GenderIsValid(){
 		return getGender().equals("Male")
 				|| getGender().equals("Female")
@@ -242,19 +239,15 @@ public class PeopleDTO {
 	public boolean GenderIsNotNull(){
 		return getGender() != null;
 	}
-
 	public boolean GenderIsNotEmpty(){
 		return !getGender().isEmpty();
 	}
-
 	public boolean HomeWorldIsAString(){
 		return getHomeworld()instanceof String;
 	}
-
 	public boolean HomeWorldReturnsURL(){
 		return getHomeworld().matches("https?:\\/\\/(www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b([-a-zA-Z0-9()@:%_\\+.~#?&//=]*)");
 	}
-
 	public boolean HomeWorldIsNotEmpty(){
 		return !getHomeworld().isEmpty();
 	}
@@ -262,31 +255,39 @@ public class PeopleDTO {
 	public boolean HomeWorldIsNotNull(){
 		return getHomeworld() != null;
 	}
-
-
 	public boolean FilmsReturnsAnArrayOfStrings(){
 		return getFilms() instanceof ArrayList<String>;
 	}
-
 	public boolean FilmsIsNotEmpty(){
 		return !getFilms().isEmpty();
 	}
-
 	public boolean FilmsIsNotNull(){
 		return getFilms() != null;
 	}
-
 	public boolean SpeciesReturnsAnObject(){
 		return getSpecies() instanceof Object;
 	}
-
 	public boolean SpeciesIsNotEmpty(){
 		return !getSpecies().isEmpty();
 	}
-
 	public boolean SpeciesIsNotNull(){
 		return getSpecies() != null;
 	}
+	public boolean VehiclesReturnsAnArrayOfStrings(){
+		return getVehicles() instanceof ArrayList<String>;
+	}
+	public boolean VehiclesIsNotEmpty(){ return !getVehicles().isEmpty();}
+	public boolean VehiclesIsNotNull(){
+		return getVehicles() != null;
+	}
+	public boolean StarshipsReturnsAnArrayOfStrings(){ return getStarships() instanceof ArrayList<String>;}
+	public boolean StarshipsIsNotEmpty(){ return !getStarships().isEmpty();}
+	public boolean StarshipsIsNotNull(){
+		return getStarships() != null;
+	}
+
+
+
 
 
 
